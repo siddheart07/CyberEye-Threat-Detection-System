@@ -1,0 +1,27 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Editor settings
+.vscode/
+
+# Generated alerts and packet captures
+logs/*.json
+logs/*.jsonl
+logs/*.csv
+logs/*.log
+data/*.pcap
+data/*.pcapng
+
+# Keep empty project folders
+!logs/.gitkeep
+!data/.gitkeep
+
+# Secrets and operating-system files
+.env
+.DS_Store
+Thumbs.db
