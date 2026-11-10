@@ -210,3 +210,6 @@ Only capture, analyse or test network traffic on systems you own or have explici
 
 **Ram Siddharth Ramasamy Raja**  
 MSc Applied Cyber Security, Technological University Dublin
+## Splunk Security Dashboard
+
+![CyberEye Splunk Security Dashboard](docs/cybereye-splunk-dashboard.png)

@@ -8,6 +8,7 @@ __pycache__/
 
 # Editor settings
 .vscode/
+.vs/
 
 # Generated alerts and packet captures
 logs/*.json
