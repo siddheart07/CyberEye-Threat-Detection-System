@@ -1,4 +1,5 @@
 # CyberEye — Network Threat Detection and Splunk Alerting System
+
 [![CyberEye Tests](https://github.com/siddheart07/CyberEye-Threat-Detection-System/actions/workflows/tests.yml/badge.svg)](https://github.com/siddheart07/CyberEye-Threat-Detection-System/actions/workflows/tests.yml)
 
 CyberEye is a Python-based defensive security monitoring project that analyses live network traffic, PCAP files and authentication events. It applies stateful detection rules, maps alerts to MITRE ATT&CK techniques, records structured security events and forwards alerts to Splunk through the HTTP Event Collector (HEC).
@@ -14,6 +15,10 @@ The Splunk dashboard provides:
 - Detection timeline
 - MITRE ATT&CK coverage
 - Recent-alert investigation table
+
+## Detection Engine Output
+
+![CyberEye Terminal Detections](docs/cybereye-terminal-detections.png)
 
 ## Key Features
 
@@ -31,6 +36,7 @@ The Splunk dashboard provides:
 - Splunk security-monitoring dashboard
 - Safe demonstration traffic generators
 - Automated detection tests using pytest
+- GitHub Actions continuous integration
 - Alert cooldown to reduce duplicate notifications
 - Environment-based secret management
 
@@ -62,6 +68,9 @@ flowchart TD
 
 ```text
 CyberEye-Threat-Detection-System/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 ├── cybereye.py
 ├── src/
 │   ├── __init__.py
@@ -79,7 +88,8 @@ CyberEye-Threat-Detection-System/
 │   ├── generate_demo_auth_log.py
 │   └── generate_demo_pcap.py
 ├── docs/
-│   └── cybereye-splunk-dashboard.png
+│   ├── cybereye-splunk-dashboard.png
+│   └── cybereye-terminal-detections.png
 ├── data/
 │   ├── .gitkeep
 │   └── demo_auth_events.jsonl
@@ -295,6 +305,8 @@ The test suite validates:
 - Successful-login filtering
 - Authentication time-window expiration
 
+Every push and pull request is also tested automatically through GitHub Actions.
+
 ## Output Files
 
 CyberEye generates:
@@ -324,7 +336,7 @@ Generated logs and packet captures are excluded from Git because they may contai
 - Detection rules are heuristic and require environment-specific tuning.
 - Brute-force detection requires authentication-failure events rather than inferring failures from encrypted packets.
 - IPv6 analysis and application-layer payload inspection are not currently implemented.
-- Packet capture visibility depends on the selected network interface.
+- Packet-capture visibility depends on the selected network interface.
 
 ## Ethical Use
 
